@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Achyuthan Sivasankar · ML Researcher</title>
-  <meta name="description" content="Achyuthan Sivasankar — ML Researcher at NYU. MS CS student graduating Fall 2027. Adaptive computation, MoE systems, and efficient architectures." />
+  <meta name="description" content="Achyuthan Sivasankar — ML Researcher at NYU. MS CS student graduating Fall 2027. Mechanistic interpretability, grokking, MoE systems, and efficient architectures." />
   <meta name="author" content="Achyuthan Sivasankar" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Achyuthan Sivasankar · ML Researcher · NYU" />
-  <meta property="og:description" content="Adaptive computation, MoE systems, and efficient architectures. Research in sparse neural routing, KAN layers, and expert-collapse dynamics." />
+  <meta property="og:description" content="Mechanistic interpretability, grokking, adaptive computation, and MoE systems. Research in Fourier circuit formation, KAN layers, and expert-collapse dynamics." />
   <meta property="og:url" content="https://achyuthan-s.github.io/" />
   <meta property="og:image" content="https://achyuthan-s.github.io/1.jpeg" />
   <meta property="og:image:alt" content="Achyuthan Sivasankar — ML Researcher" />
@@ -1692,6 +1692,8 @@
     .badge-active { background: var(--claude-coral-muted); color: var(--claude-coral); border: 1px solid rgba(196, 113, 79, 0.3); }
     .badge-shipped { background: var(--gh-green-muted); color: var(--gh-green); border: 1px solid var(--tag-border); }
     .badge-aaai { background: rgba(255, 200, 80, 0.15); color: var(--badge-aaai-text); border: 1px solid rgba(255, 200, 80, 0.35); }
+    .badge-arxiv { background: rgba(179, 27, 27, 0.1); color: #b31b1b; border: 1px solid rgba(179, 27, 27, 0.28); }
+    [data-theme="dark"] .badge-arxiv { background: rgba(255, 107, 107, 0.12); color: #ff8a8a; border-color: rgba(255, 107, 107, 0.3); }
 
     .research-desc {
       font-size: 0.875rem;
@@ -1979,6 +1981,24 @@
       transform: translateY(-2px);
     }
 
+    .pinned-repo--static {
+      cursor: default;
+    }
+
+    .pinned-repo--static:hover {
+      border-color: var(--gray-border);
+      box-shadow: none;
+      transform: none;
+    }
+
+    .pinned-repo--static .repo-name {
+      color: var(--black);
+    }
+
+    .pinned-repo--static:hover .repo-name {
+      text-decoration: none;
+    }
+
     .pinned-repo-header {
       display: flex;
       align-items: center;
@@ -2107,6 +2127,12 @@
       box-shadow: 0 4px 12px rgba(31, 35, 40, 0.08);
     }
 
+    a.pub-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
     @media (min-width: 768px) {
       .pub-card { width: 550px; padding: 2rem; }
     }
@@ -2120,6 +2146,9 @@
       color: var(--gh-green);
       margin-bottom: 8px;
     }
+
+    .pub-type-arxiv { color: #b31b1b; }
+    [data-theme="dark"] .pub-type-arxiv { color: #ff8a8a; }
 
     .pub-title {
       font-size: 14px;
@@ -2307,6 +2336,13 @@
 
     [data-theme="dark"] .submit-btn:hover { background: #2ea043; }
 
+    .contact-form-note {
+      font-size: 0.75rem;
+      color: var(--gray);
+      line-height: 1.4;
+      margin-top: -4px;
+    }
+
     .contact-meta {
       margin-top: 1rem;
       font-size: 0.875rem;
@@ -2383,7 +2419,7 @@
       </a>
     </div>
     <div class="header-actions">
-      <a href="cv.pdf" download="Achyuthan_Sivasankar_CV.pdf" class="cv-btn" aria-label="Download CV">
+      <a href="cv.pdf" download="Achyuthan_Sivasankar_Resume.pdf" class="cv-btn" aria-label="Download CV">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         <span class="cv-btn-text">CV</span>
       </a>
@@ -2434,7 +2470,7 @@
           <span class="hero-stat"><strong>MS CS</strong> · Fall '27</span>
           <span class="hero-stat"><strong>ML</strong> Research</span>
         </div>
-        <a href="cv.pdf" download="Achyuthan_Sivasankar_CV.pdf" class="hero-cv-btn">
+        <a href="cv.pdf" download="Achyuthan_Sivasankar_Resume.pdf" class="hero-cv-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download CV
         </a>
@@ -2474,6 +2510,10 @@
         <h5 class="readme-heading">## Research highlights</h5>
         <div class="research-highlights">
           <div class="highlight-stat">
+            <span class="highlight-value">+1,722</span>
+            <span class="highlight-label">FSD lead steps before grokking (9 configs)</span>
+          </div>
+          <div class="highlight-stat">
             <span class="highlight-value">+6.8%</span>
             <span class="highlight-label">CIFAR-100 vs MLP (KAN-Multi)</span>
           </div>
@@ -2485,9 +2525,13 @@
             <span class="highlight-value">MoE-Bench</span>
             <span class="highlight-label">Open-source · Apache 2.0</span>
           </a>
+          <a href="https://arxiv.org/abs/2606.12966" target="_blank" rel="noopener noreferrer" class="highlight-stat is-link">
+            <span class="highlight-value">arXiv</span>
+            <span class="highlight-label">Grokking paper · 2606.12966</span>
+          </a>
           <div class="highlight-stat">
-            <span class="highlight-value">AAAI '26</span>
-            <span class="highlight-label">AD-LiST-JEPA · Waymo LiDAR</span>
+            <span class="highlight-value">JEPA</span>
+            <span class="highlight-label">AD-LiST-JEPA · Waymo LiDAR (NYU lab)</span>
           </div>
         </div>
       </div>
@@ -2496,6 +2540,7 @@
         <h5 class="readme-heading">## Research interests</h5>
         <ul class="readme-list">
           <li>PyTorch · JAX · HuggingFace</li>
+          <li>Mechanistic interpretability · Grokking</li>
           <li>MoE architectures · KAN layers</li>
           <li>LoRA / PEFT · RAG · LLM fine-tuning</li>
           <li>Self-supervised learning · Computer Vision</li>
@@ -2546,6 +2591,23 @@
 
       <article class="research-card">
         <div class="research-card-header">
+          <h4>Circuit Synchronization Precedes Generalization: Fourier Structure in Grokking Transformers</h4>
+          <span class="badge badge-arxiv">arXiv preprint</span>
+        </div>
+        <p class="research-desc">
+          Introduces the Frequency Synchronization Degree (FSD) — a permutation-tested metric for Fourier circuit synchronisation that requires no prior circuit knowledge. FSD predicts grokking 500–3,000 steps in advance across nine modular-addition configs (mean lead +1,722 steps). Weight-decay intervention at the FSD ceiling causally confirms Phase 2 is regularisation, not computation: ∆t ∝ 1/λ across three primes.
+        </p>
+        <div class="research-stats">
+          <div class="stat"><strong>9/9</strong> configs FSD leads grokking</div>
+          <div class="stat"><strong>+1,722</strong> mean lead steps</div>
+          <div class="stat"><strong>∆t ∝ 1/λ</strong> causal timing law</div>
+          <div class="stat"><strong>R² ≥ 0.99</strong> cross-prime fit</div>
+        </div>
+        <a href="https://arxiv.org/abs/2606.12966" target="_blank" rel="noopener noreferrer" class="card-link">arXiv:2606.12966 →</a>
+      </article>
+
+      <article class="research-card">
+        <div class="research-card-header">
           <h4>KAN-Multi: Adaptive Multi-Basis Routing with Emergent Specialization</h4>
           <span class="badge badge-active">Manuscript in prep</span>
         </div>
@@ -2581,10 +2643,10 @@
       <article class="research-card">
         <div class="research-card-header">
           <h4>AD-LiST-JEPA: Self-Supervised LiDAR Perception for Autonomous Driving</h4>
-          <span class="badge badge-aaai">AAAI 2026 Lab</span>
+          <span class="badge badge-active">NYU Lab · In progress</span>
         </div>
         <p class="research-desc">
-          Research assistant in Prof. Anna Choromanska's lab (NYU) working with PhD candidate Haoran Zhu on AD-LiST-JEPA — a Joint Embedding Predictive Architecture for automotive LiDAR object detection and occupancy completion/forecasting on the Waymo Open Dataset. Completed SSL pretraining pipeline; running downstream OCF finetuning experiments.
+          Research assistant in Prof. Anna Choromanska's lab (NYU) working with postdoc Haoran Zhu on AD-LiST-JEPA — a Joint Embedding Predictive Architecture for automotive LiDAR object detection and occupancy completion/forecasting on the Waymo Open Dataset. Completed SSL pretraining pipeline; running downstream OCF finetuning experiments.
         </p>
         <div class="research-stats">
           <div class="stat"><strong>Waymo</strong> Open Dataset</div>
@@ -2622,7 +2684,7 @@
         <h4>Research Assistant — Prof. Anna Choromanska's Lab</h4>
         <p class="exp-org">NYU</p>
         <p class="exp-date">May 2026 – Present</p>
-        <p class="exp-desc">Working on self-supervised representation learning for autonomous driving with PhD candidate Haoran Zhu. Contributing to AD-LiST-JEPA on the Waymo Open Dataset; completed full SSL pretraining pipeline and running OCF downstream finetuning experiments.</p>
+        <p class="exp-desc">Working on self-supervised representation learning for autonomous driving with postdoc Haoran Zhu. Contributing to AD-LiST-JEPA on the Waymo Open Dataset; completed full SSL pretraining pipeline and running OCF downstream finetuning experiments.</p>
         <div class="exp-tags">
           <span class="exp-tag">PyTorch</span>
           <span class="exp-tag">LiDAR</span>
@@ -2831,7 +2893,7 @@
   <!-- PROJECTS -->
   <section id="projects">
     <h3 class="section-label">Projects</h3>
-    <p class="section-sublabel">Pinned Repositories</p>
+    <p class="section-sublabel">Pinned Repositories &amp; Research</p>
     <div class="pinned-repos">
 
       <a href="https://github.com/Achyuthan-S/moe-bench" target="_blank" rel="noopener" class="pinned-repo">
@@ -2855,10 +2917,10 @@
         </div>
       </a>
 
-      <a href="https://github.com/Achyuthan-S/acga-knowledge-base" target="_blank" rel="noopener" class="pinned-repo">
+      <a href="https://github.com/Achyuthan-S/rag-acga-knowledge-base-memory-system" target="_blank" rel="noopener noreferrer" class="pinned-repo">
         <div class="pinned-repo-header">
           <svg class="repo-icon-themed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l3 8M16 7.5l-3 8M8.4 6h7.2"/></svg>
-          <span class="repo-name">acga-knowledge-base</span>
+          <span class="repo-name">rag-acga-knowledge-base-memory-system</span>
           <span class="repo-visibility">Public</span>
         </div>
         <p class="repo-desc">Adaptive Corrective Graph-Augmented RAG with 4-layer memory. 85ms cold latency, 15.5× cached speedup. Production-ready, zero-cost deployment.</p>
@@ -2876,13 +2938,13 @@
         </div>
       </a>
 
-      <a href="https://github.com/Achyuthan-S" target="_blank" rel="noopener" class="pinned-repo">
+      <div class="pinned-repo pinned-repo--static">
         <div class="pinned-repo-header">
           <svg class="repo-icon-themed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h14"/><circle cx="19" cy="12" r="2"/><circle cx="19" cy="18" r="2"/></svg>
           <span class="repo-name">KAN-Multi</span>
-          <span class="repo-visibility">Research</span>
+          <span class="repo-visibility">No public repo</span>
         </div>
-        <p class="repo-desc">Multi-basis adaptive routing layer with 6 function families and statistics-driven router. +6.8% over MLP on CIFAR-100.</p>
+        <p class="repo-desc">Multi-basis adaptive routing layer with 6 function families and statistics-driven router. +6.8% over MLP on CIFAR-100. Manuscript in prep — no public repo yet.</p>
         <div class="repo-topics">
           <span class="repo-topic">KAN</span>
           <span class="repo-topic">Routing</span>
@@ -2892,15 +2954,15 @@
           <span class="repo-lang"><span class="lang-dot research"></span> PyTorch</span>
           <span class="repo-stat">+6.8% vs MLP</span>
         </div>
-      </a>
+      </div>
 
-      <a href="https://github.com/Achyuthan-S" target="_blank" rel="noopener" class="pinned-repo">
+      <div class="pinned-repo pinned-repo--static">
         <div class="pinned-repo-header">
           <svg class="repo-icon-themed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="8.5" y="14" width="7" height="7" rx="1"/><path d="M6.5 10v2.5H8M17.5 10v2.5H16M11.5 17.5V16"/></svg>
           <span class="repo-name">AutoMoE</span>
-          <span class="repo-visibility">Research</span>
+          <span class="repo-visibility">No public repo</span>
         </div>
-        <p class="repo-desc">Evolutionary REINFORCE meta-learner discovering optimal MoE topologies. 2× parameter efficiency on Meta-World ML10.</p>
+        <p class="repo-desc">Evolutionary REINFORCE meta-learner discovering optimal MoE topologies. 2× parameter efficiency on Meta-World ML10. Research project — no public repo yet.</p>
         <div class="repo-topics">
           <span class="repo-topic">MoE</span>
           <span class="repo-topic">Meta-Learning</span>
@@ -2910,7 +2972,7 @@
           <span class="repo-lang"><span class="lang-dot python"></span> Python</span>
           <span class="repo-stat">2× efficiency</span>
         </div>
-      </a>
+      </div>
 
     </div>
   </section>
@@ -2921,6 +2983,12 @@
     <p class="section-sublabel">Research Output</p>
     <span class="carousel-hint" aria-hidden="true">← → arrow keys to scroll</span>
     <div class="h-scroll exp-scroll">
+
+      <a href="https://arxiv.org/abs/2606.12966" target="_blank" rel="noopener noreferrer" class="pub-card">
+        <div class="pub-type pub-type-arxiv">arXiv</div>
+        <div class="pub-title">Circuit Synchronization Precedes Generalization: Causal Evidence from Fourier Structure in Grokking Transformers</div>
+        <div class="pub-venue">First author · NYU · arXiv:2606.12966 · Jun 2026</div>
+      </a>
 
       <article class="pub-card">
         <div class="pub-type">Prep</div>
@@ -2984,12 +3052,13 @@
           </a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleContact(event)">
+      <form class="contact-form" onsubmit="handleContact(event)" aria-label="Contact form">
         <input class="contactInput" type="text" name="name" placeholder="Name" required />
         <input class="contactInput" type="email" name="email" placeholder="Email" required />
         <input class="contactInput" type="text" name="subject" placeholder="Subject" />
         <textarea class="contactInput" name="message" placeholder="Message" rows="4" required></textarea>
-        <button type="submit" class="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn">Send via email</button>
+        <p class="contact-form-note">Opens your email client with your message pre-filled.</p>
       </form>
     </div>
   </section>
@@ -3035,6 +3104,7 @@
   // Typewriter effect — cycles through existing subtitle topics
   const phrases = [
     'Sivasankar',
+    'Mechanistic Interpretability',
     'Adaptive Computation',
     'MoE Systems',
     'Efficient Architectures'
